@@ -1,2 +1,2 @@
 # hapi-throttling
-HAPI Redis-based rate limit plugin.
+HAPI rate limit plugin with Redis storage.
