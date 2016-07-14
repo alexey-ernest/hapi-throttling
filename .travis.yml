@@ -3,5 +3,7 @@ node_js:
   - "0.10"
 services:
   - redis-server
+env:
+  - REDIS_HOST=localhost
 after_success:
   npm run test:coveralls
