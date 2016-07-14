@@ -7,7 +7,7 @@ server.connection({port: 8000});
 
 // register plugins
 server.register({
-  register: require('./'),
+  register: require('../'),
   options: {
     redis: {
       host: '192.168.99.100',
