@@ -14,10 +14,22 @@ server.register({
       port: 6379
     },
     getKey: function (request, reply, done) {
-      done(null, request.info.remoteAddress);
+      var key = request.info.remoteAddress + ':' + request.route.path;
+      done(null, key);
     },
-    max: 5,
-    duration: 60000
+    getLimit: function (request, reply, done) {
+      var max;
+      if (request.route.path === '/test1') {
+        max = 5;
+      } else {
+        max = 10;
+      }
+
+      done(null, {
+        max: max,
+        duration: 60000
+      });
+    }
   }
 }, function (err) {
   if (err) {
@@ -26,13 +38,19 @@ server.register({
 });
 
 // register routes
-server.route({
+server.route([{
   method: 'GET', 
-  path: '/', 
+  path: '/test1', 
   handler: function (request, reply) {
-    reply('OK');
+    reply('test1');
   }
-});
+}, {
+  method: 'GET',
+  path: '/test2',
+  handler: function(request, reply) {
+    reply('test2');
+  }
+}]);
 
 // start the server
 server.start(function (err) {
