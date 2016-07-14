@@ -4,7 +4,8 @@
   "description": "HAPI rate limit plugin with Redis storage",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/jscover/bin/jscover lib lib-cov && JSCOV=1 mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "mocha",
+    "test:coveralls": "./node_modules/jscover/bin/jscover lib lib-cov && JSCOV=1 mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
