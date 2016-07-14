@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "test:coveralls": "./node_modules/jscover/bin/jscover lib lib-cov && JSCOV=1 mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
+    "test:coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -37,8 +37,7 @@
     "chai": "^3.5.0",
     "coveralls": "^2.11.11",
     "hapi": "8.4.x",
-    "jscover": "^1.0.0",
-    "mocha": "^2.5.3",
-    "mocha-lcov-reporter": "^1.2.0"
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3"
   }
 }

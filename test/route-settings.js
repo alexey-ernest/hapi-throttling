@@ -40,7 +40,7 @@ describe('HAPI with route-specific settings', function () {
     };
 
     server.register({
-      register: require('./'),
+      register: require('../'),
       options: options
     }, function (err) {
       if (err) {
