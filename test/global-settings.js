@@ -32,7 +32,7 @@ describe('HAPI with globally registered plugin', function () {
     };
 
     server.register({
-      register: require('../'),
+      register: require('./'),
       options: options
     }, function (err) {
       if (err) {
