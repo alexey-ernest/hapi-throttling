@@ -17,7 +17,7 @@ describe('HAPI with globally registered plugin', function () {
 
     var options = {
       redis: {
-        host: '192.168.99.100',
+        host: process.env.REDIS_HOST,
         port: 6379
       },
       getKey: function (request, reply, done) {
