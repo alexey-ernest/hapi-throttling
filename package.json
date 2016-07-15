@@ -1,6 +1,6 @@
 {
   "name": "hapi-throttling",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HAPI rate limit plugin with Redis storage",
   "main": "index.js",
   "scripts": {
